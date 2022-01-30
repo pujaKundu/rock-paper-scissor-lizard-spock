@@ -1,7 +1,7 @@
-/*---------------------------------------------------------------
- Global styles
-----------------------------------------------------------------*/
-
+/*
+ Common styles
+*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -12,51 +12,43 @@ body {
   font-family: "Barlow Condensed", sans-serif;
 }
 
-/* 
--------------------------------------------------------------------------------
-HTML elements 
--------------------------------------------------------------------------------
-*/
-.wrapper {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(
-    134.34% 134.34% at 50% 0%,
-    #1f3757 0%,
-    #131537 100%
-  );
+  background-color: #131537;
 }
 
 .scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 700px;
   height: 150px;
   border-radius: 15px;
   border: 1px solid white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 50px;
 }
 
 .title {
   padding-left: 30px;
   margin: 3% 0;
+  color: #fff;
 }
 
 .score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 150px;
   height: 114px;
   background-color: white;
   border: 1px solid white;
   border-radius: 8px;
   margin-right: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .score h1 {
@@ -76,6 +68,8 @@ HTML elements
 }
 
 .options {
+  display: flex;
+  justify-content: center;
   background-image: url("../images/pentagon-removebg-preview.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -85,10 +79,8 @@ HTML elements
   width: 476px;
   height: 430px;
   margin-top: 100px;
-  display: flex;
   z-index: 0;
   flex-wrap: wrap;
-  justify-content: center;
 }
 .options img {
   width: 100px;
@@ -165,14 +157,14 @@ HTML elements
   justify-content: center;
 }
 
-.referee {
+.result {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.referee h1 {
+.result h1 {
   font-size: 45px;
   color: white;
 }

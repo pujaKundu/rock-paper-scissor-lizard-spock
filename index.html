@@ -4,19 +4,27 @@
     <link rel="stylesheet" href="css/styles.css" />
     <meta charset="UTF-8" />
     <meta ="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="shortcut icon"
+      href="/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap"
       rel="stylesheet"
     />
-    <title>Rock Paper Scissors</title>
+    <title>Rock Paper Scissors Lizard Spock</title>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="container">
       <div class="scoreboard">
         <div class="title">
-          <img src="/images/title.png" />
+          <!-- <img src="/images/title.png" /> -->
+          <h2>ROCK</h2>
+          <h2>PAPER</h2>
+          <h2>SCISSORS</h2>
+          <h2>LIZARD</h2>
+          <h2>SPOCK</h2>
         </div>
         <div class="score">
           <p>SCORE</p>
@@ -50,7 +58,7 @@
             <img id="userPickImage" src="/images/Paper.png" />
           </div>
         </div>
-        <div class="referee">
+        <div class="result">
           <div class="decision"><h1>YOU WIN!</h1></div>
           <div class="newGame" onclick="playAgainBtn()">PLAY AGAIN</div>
         </div>
