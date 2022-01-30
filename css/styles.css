@@ -96,7 +96,7 @@ HTML elements
   display: block;
 }
 
-.options .paper {
+.options .spock {
   margin-right: 2%;
   margin-top: 20%;
 }
@@ -104,14 +104,14 @@ HTML elements
 .options .scissors {
   margin-left: 5%;
 }
-.options .rock {
+.options .paper {
   margin-left: 5%;
   margin-top: 20%;
 }
 .options .lizard {
   margin-left: 5%;
 }
-.options .spock {
+.options .rock {
   margin-left: 5%;
 }
 .options .option {
