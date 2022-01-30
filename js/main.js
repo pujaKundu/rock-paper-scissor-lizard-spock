@@ -1,3 +1,7 @@
+const clickSound = new Audio("/audio/mixkit-select-click-1109.wav");
+const winSound = new Audio("/audio/mixkit-winning-notification-2018.wav");
+const loseSound = new Audio("/audio/mixkit-losing-piano-2024.wav");
+
 const userOptions = {
   rock: "/images/Rock.png",
   paper: "/images/Paper.png",
@@ -15,7 +19,7 @@ const pickUserOption = (option) => {
   let contest = document.querySelector(".contest");
   contest.style.display = "flex";
 
-  // set user Image
+  clickSound.play();
   document.getElementById("userPickImage").src = userOptions[option];
 
   pickComputeroption(option);
@@ -38,6 +42,7 @@ const result = (userOption, computerOption) => {
     (userOption == "paper" && computerOption == "lizard")
   ) {
     setDecision("YOU LOSE!");
+    playSound("lose");
   }
   if (
     (userOption == "paper" && computerOption == "rock") ||
@@ -45,9 +50,11 @@ const result = (userOption, computerOption) => {
   ) {
     setDecision("YOU WIN!");
     setScore(SCORE + 1);
+    playSound(win);
   }
   if (userOption == "paper" && computerOption == "paper") {
     setDecision("It's a tie!");
+    playSound("tie");
   }
   if (
     (userOption == "rock" && computerOption == "scissors") ||
@@ -55,15 +62,18 @@ const result = (userOption, computerOption) => {
   ) {
     setDecision("YOU WIN!");
     setScore(SCORE + 1);
+    playSound("win");
   }
   if (
     (userOption == "rock" && computerOption == "paper") ||
     (userOption == "rock" && computerOption == "spock")
   ) {
     setDecision("YOU LOSE!");
+    playSound("lose");
   }
   if (userOption == "rock" && computerOption == "rock") {
     setDecision("It's a tie!");
+    playSound("tie");
   }
 
   if (
@@ -71,6 +81,7 @@ const result = (userOption, computerOption) => {
     (userOption == "scissors" && computerOption == "lizard")
   ) {
     setDecision("YOU LOSE!");
+    playSound("lose");
   }
   if (
     (userOption == "scissors" && computerOption == "paper") ||
@@ -78,15 +89,18 @@ const result = (userOption, computerOption) => {
   ) {
     setDecision("YOU WIN!");
     setScore(SCORE + 1);
+    playSound("win");
   }
   if (userOption == "scissors" && computerOption == "scissors") {
     setDecision("It's a tie!");
+    playSound("tie");
   }
   if (
     (userOption == "lizard" && computerOption == "rock") ||
     (userOption == "lizard" && computerOption == "scissors")
   ) {
     setDecision("YOU LOSE!");
+    playSound("lose");
   }
   if (
     (userOption == "lizard" && computerOption == "spock") ||
@@ -94,9 +108,11 @@ const result = (userOption, computerOption) => {
   ) {
     setDecision("YOU WIN!");
     setScore(SCORE + 1);
+    playSound("win");
   }
   if (userOption == "lizard" && computerOption == "lizard") {
     setDecision("It's a tie!");
+    playSound("tie");
   }
   if (
     (userOption == "spock" && computerOption == "scissors") ||
@@ -104,15 +120,18 @@ const result = (userOption, computerOption) => {
   ) {
     setDecision("YOU WIN!");
     setScore(SCORE + 1);
+    playSound("win");
   }
   if (
     (userOption == "spock" && computerOption == "paper") ||
     (userOption == "spock" && computerOption == "lizard")
   ) {
     setDecision("YOU LOSE!");
+    playSound("lose");
   }
   if (userOption == "spock" && computerOption == "spock") {
     setDecision("It's a tie!");
+    playSound("tie");
   }
 };
 
@@ -131,4 +150,12 @@ const setDecision = (decision) => {
 const setScore = (newScore) => {
   SCORE = newScore;
   document.querySelector(".score h1").innerText = newScore;
+};
+
+const playSound = (result) => {
+  if (result == "win") {
+    winSound.play();
+  } else {
+    loseSound.play();
+  }
 };
